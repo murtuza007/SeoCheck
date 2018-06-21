@@ -9,7 +9,7 @@
 
 // r.pipe(stremaPro());
 
-// const {Rule} = require('./index.js');
+const {Rule} = require('./index.js');
 
 // console.log(Rule);
 const cheerio = require('cheerio')
@@ -27,4 +27,11 @@ console.log($('h2[name="str234234"]').length);
 // }
 // var data = {};
 
-// var rule1 = new Rule.RuleTagAttribute(data);
+var rule1 = new Rule.RuleTag('', 'img');
+var rule2 = new Rule.RuleHead();
+
+console.log(rule1.validate($));
+console.log(rule1.message());
+
+console.log(rule2.validate($));
+console.log(rule2.message());
