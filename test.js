@@ -1,6 +1,6 @@
 const fs = require('fs');
 //       stremaPro = require('./index');
-const {Rule, Writer, Reader} = require('./index.js');
+const {Configure, Rule, Writer, Reader} = require('./index.js');
 
 // console.log("-------------------------");
 var r = fs.createReadStream('./dummy.txt', 'utf8');
@@ -18,9 +18,30 @@ var r = fs.createReadStream('./dummy.txt', 'utf8');
 
 
 var data = 'this is the output';
-var objWriter = new Writer.writeConsole().write(data);
-var objWriter1 = new Writer.writeFile('./admin/write2.txt').write(data).then(console.log).catch(console.log);
-var objWriter2 = new Writer.writeStream(fs.createWriteStream('./admin/write1.txt')).write(data).then(console.log).catch(console.log);
+// var objWriter = new Writer.writeConsole().write(data);
+var objWriter = new Writer.writeConsole()
+// var objWriter1 = new Writer.writeFile('./admin/write2.txt').write(data).then(console.log).catch(console.log);
+// var objWriter2 = new Writer.writeStream(fs.createWriteStream('./admin/write1.txt')).write(data).then(console.log).catch(console.log);
+
+// new Rule.RuleTag('head', 'title'),
+// new Rule.RuleTagAttributeValue('head', 'meta', 'name', 'descriptions'),
+// new Rule.RuleTagAttributeValue('head', 'meta', 'name', 'keywords'),
+// new Rule.RuleHead(),
+var rules = [
+      
+      // new Rule.RuleTag('head', 'title'),
+      // new Rule.RuleTagAttributeValue('head', 'meta', 'name', 'descriptions'),
+      // new Rule.RuleTagAttributeValue('head', 'meta', 'name', 'keywords'),
+      // new Rule.RuleHead(),
+      new Rule.RuleTagAttribute('', 'img', 'alt')
+];
+// var config = new Configure(new Reader.readStream(fs.createReadStream('./google.html')), objWriter, rules);
+var config = new Configure(new Reader.readStream(fs.createReadStream('./image.html')), objWriter, rules);
+
+config.validate(function(err, data){
+      console.log(err);
+      console.log(data);
+});
 
 // // console.log(Rule);
 // const cheerio = require('cheerio')
@@ -46,3 +67,5 @@ var objWriter2 = new Writer.writeStream(fs.createWriteStream('./admin/write1.txt
 
 // console.log(rule2.validate($));
 // console.log(rule2.message());
+
+
