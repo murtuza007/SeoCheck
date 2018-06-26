@@ -1,1 +1,6 @@
-this is the output
+There are 6 <img>  tag without alt attribute 
+There are more than 4 <img>  tag with altattribute 
+body does not contain <img>  tag with "rel" attribute 
+head does not contain <meta>  tag with "name" attribute having attribute value descriptions 
+<body> does not contain <img1>  tag 
+<body> contains more than 5 <img>  tag (overall: 11)
