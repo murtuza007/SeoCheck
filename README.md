@@ -12,3 +12,9 @@ $ npm i check-seo
 ```
 
 ## Usage
+
+Load all the modules
+
+```javascript
+const {Configure, Rule, Writer, Reader} = require('../index.js');
+```
