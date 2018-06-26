@@ -1,7 +1,11 @@
 const fs = require('fs');
 //       stremaPro = require('./index');
-const {Configure, Rule, Writer, Reader} = require('../index.js');
+// const {Configure, Rule, Writer, Reader} = require('../index.js');
 
+const Configure = require('../index').Configure;
+const Rule = require('../index').Rule;
+const Writer = require('../index').Writer;
+const Reader = require('../index').Reader;
 // var objWriter = new Writer.writeConsole().write(data);
 var objWriter = new Writer.writeConsole()
 var objWriter1 = new Writer.writeFile('./write2.txt');
