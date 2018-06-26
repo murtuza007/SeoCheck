@@ -8,7 +8,8 @@
 ## Install via [npm](https://npmjs.com)
 
 ```sh
-$ npm i check-seo
+npm i check-seo
+npm test
 ```
 
 ## Usage
@@ -16,6 +17,7 @@ $ npm i check-seo
 Load all the modules
 
 ```javascript
+const fs = require('fs');
 const {Configure, Rule, Writer, Reader} = require('check-seo');
 
 // Or load individual modules 
@@ -23,5 +25,20 @@ const Configure = require('check-seo').Configure;
 const Rule = require('check-seo').Rule;
 const Writer = require('check-seo').Writer;
 const Reader = require('check-seo').Reader;
+```
+
+## Rules Available
+
+```javascript
+new Rule.RuleAllContainTagAttribute(parentTag, tagSearch, attributeSearch, valueSearch(optional))
+new Rule.RuleMaxTagAttribute(parentTag, tagSearch, attributeSearch, valueSearch or '', maxCount)
+new Rule.RuleExistsTagAttribute(parentTag, tagSearch, attributeSearch, valueSearch(optional))
+new Rule.RuleMaxTag(parentTag, tagSearch, maxCount)
+new Rule.RuleExistsTag(parentTag, tagSearch)
+```
+
+## Example
+
+```javascript
 
 ```
