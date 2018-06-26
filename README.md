@@ -30,11 +30,11 @@ const Reader = require('check-seo').Reader;
 ## Rules Available
 
 ```javascript
-new Rule.RuleAllContainTagAttribute(parentTag, tagSearch, attributeSearch, valueSearch(optional))
-new Rule.RuleMaxTagAttribute(parentTag, tagSearch, attributeSearch, valueSearch or '', maxCount)
-new Rule.RuleExistsTagAttribute(parentTag, tagSearch, attributeSearch, valueSearch(optional))
-new Rule.RuleMaxTag(parentTag, tagSearch, maxCount)
-new Rule.RuleExistsTag(parentTag, tagSearch)
+RuleAllContainTagAttribute(parentTag, tagSearch, attributeSearch, valueSearch(optional))
+RuleMaxTagAttribute(parentTag, tagSearch, attributeSearch, valueSearch or '', maxCount)
+RuleExistsTagAttribute(parentTag, tagSearch, attributeSearch, valueSearch(optional))
+RuleMaxTag(parentTag, tagSearch, maxCount)
+RuleExistsTag(parentTag, tagSearch)
 ```
 
 ## Example
