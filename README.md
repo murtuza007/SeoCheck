@@ -17,4 +17,11 @@ Load all the modules
 
 ```javascript
 const {Configure, Rule, Writer, Reader} = require('../index.js');
+
+// Or load individual modules 
+const Configure = require('../index').Configure;
+const Rule = require('../index').Rule;
+const Writer = require('../index').Writer;
+const Reader = require('../index').Reader;
+
 ```
