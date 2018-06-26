@@ -33,7 +33,9 @@ var rules = [
       // new Rule.RuleTagAttributeValue('head', 'meta', 'name', 'descriptions'),
       // new Rule.RuleTagAttributeValue('head', 'meta', 'name', 'keywords'),
       // new Rule.RuleHead(),
-      new Rule.RuleTagAttribute('', 'img', 'alt')
+      new Rule.RuleAllContainTagAttribute('', 'img', 'alt'),
+      new Rule.RuleCountTagAttribute('', 'img', 'alt', undefined ,4),
+      new Rule.RuleExistsTagAttribute('', 'img', 'alt')
 ];
 // var config = new Configure(new Reader.readStream(fs.createReadStream('./google.html')), objWriter, rules);
 var config = new Configure(new Reader.readStream(fs.createReadStream('./image.html')), objWriter, rules);
