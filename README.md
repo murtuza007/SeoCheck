@@ -4,6 +4,7 @@
 
 [![npm](https://img.shields.io/badge/npm-v6.0.1-brightgreen.svg)](https://npmjs.com/package/check-seo)
 [![npm](https://img.shields.io/badge/node-8.5.0-orange.svg)](https://npmjs.com/package/check-seo)
+[![Build Status](https://travis-ci.org/murtuza007/SeoCheck.svg?branch=master)](https://travis-ci.org/murtuza007/SeoCheck)
 
 ## Install via [npm](https://npmjs.com)
 
