@@ -1,15 +1,14 @@
 const fs = require('fs');
-//       stremaPro = require('./index');
 // const {Configure, Rule, Writer, Reader} = require('../index.js');
 
 const Configure = require('../index').Configure;
 const Rule = require('../index').Rule;
 const Writer = require('../index').Writer;
 const Reader = require('../index').Reader;
-// var objWriter = new Writer.writeConsole().write(data);
-var objWriter = new Writer.writeConsole()
-var objWriter1 = new Writer.writeFile('./write2.txt');
-// var objWriter2 = new Writer.writeStream(fs.createWriteStream('./admin/write1.txt')).write(data).then(console.log).catch(console.log);
+
+var writeConsole = new Writer.writeConsole()
+var writeFile = new Writer.writeFile('./test/output/write.txt');
+var writeFilestream = new Writer.writeStream(fs.createWriteStream('./test/output/writestream.txt'));
 
 var rules = [];
 
@@ -24,9 +23,26 @@ rules.push(new Rule.RuleMaxTag('', 'strong',5))
 rules.push(new Rule.RuleMaxTag('', 'h1', 3))
 
 // var config = new Configure(new Reader.readStream(fs.createReadStream('./google.html')), objWriter, rules);
-var config = new Configure(new Reader.readStream(fs.createReadStream('./test/image.html')), objWriter, rules);
+var config1 = new Configure(new Reader.readStream(fs.createReadStream('./test/image.html')), writeConsole, rules);
 
-config.validate(function(err, data){
+config1.validate(function(err, data){
+      console.log(err);
+      console.log(data);
+});
+
+
+
+var config2 = new Configure(new Reader.readStream(fs.createReadStream('./test/image.html')), writeFile, rules);
+
+config2.validate(function(err, data){
+      console.log(err);
+      console.log(data);
+});
+
+
+var config3 = new Configure(new Reader.readStream(fs.createReadStream('./test/image.html')), writeFilestream, rules);
+
+config3.validate(function(err, data){
       console.log(err);
       console.log(data);
 });
