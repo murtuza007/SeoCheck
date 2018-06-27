@@ -67,7 +67,7 @@ rules.push(new Rule.RuleExistsTag('body', 'img'));
 rules.push(new Rule.RuleMaxTag('', 'strong',5))
 
 
-var config1 = new Configure(new Reader.readStream(fs.createReadStream('./test/image.html')), writeConsole, rules);
+var config1 = new Configure(new Reader.readStream(fs.createReadStream(path/to/input)), writeConsole, rules);
 
 config1.validate(function(err, data){
       console.log(err);
