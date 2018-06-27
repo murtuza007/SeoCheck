@@ -1,7 +1,7 @@
 {
   "name": "check-seo",
   "version": "0.0.2",
-  "description": "This package will crawl the html file and output the result of the findings depending on the rules applied",
+  "description": "SeoCheck module is build to check if there is/are any irregularites in your HTML file. You can customise your own set of rules to check if your end requirements are met.",
   "main": "index.js",
   "scripts": {
     "test": "node test"
@@ -15,9 +15,10 @@
     "type": "git",
     "url": "https://github.com/murtuza007/SeoCheck.git"
   },
-  "author": "Murtuza Kothawala",
+  "author": "Murtuza Kothawala <murtuza.kothawala@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2"
-  }
+  },
+  "homepage": "https://github.com/murtuza007/SeoCheck#readme"
 }
