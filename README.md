@@ -40,5 +40,38 @@ RuleExistsTag(parentTag, tagSearch)
 ## Example
 
 ```javascript
+// To write data to console 
+var writeConsole = new Writer.writeConsole()
+// To write data to file
+var writeFile = new Writer.writeFile('path/to/outputfile');
+// To write data to file stream
+var writeFilestream = new Writer.writeStream(fs.createWriteStream('path/to/outputfile'));
+
+var rules = [];
+//Check if all tag contains attribute eg. all <img> contain alt attribute
+rules.push(new Rule.RuleAllContainTagAttribute('', 'img', 'alt'));
+
+//Check <img alt> tag count greater than 4 
+rules.push(new Rule.RuleMaxTagAttribute('', 'img', 'alt', '' ,4));
+
+//check parent contains <tag attribute> eg: body containg <img alt>
+rules.push(new Rule.RuleExistsTagAttribute('body', 'img', 'rel'));
+
+//check parent contains <tag attribute=value> eg: head contains  <meta name="keywords">
+rules.push(new Rule.RuleExistsTagAttribute('head', 'meta', 'name', 'keywords'));
+
+//check if parent contains <tag> eg: body conatins <img>
+rules.push(new Rule.RuleExistsTag('body', 'img'));
+
+//check tag count: parent contains <tag> eg: body conatins <img>
+rules.push(new Rule.RuleMaxTag('', 'strong',5))
+
+
+var config1 = new Configure(new Reader.readStream(fs.createReadStream('./test/image.html')), writeConsole, rules);
+
+config1.validate(function(err, data){
+      console.log(err);
+      console.log(data);
+});
 
 ```
