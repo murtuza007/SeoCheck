@@ -1,6 +1,6 @@
 {
   "name": "check-seo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "SeoCheck module is build to check if there is/are any irregularites in your HTML file. You can customise your own set of rules to check if your end requirements are met.",
   "main": "index.js",
   "scripts": {
